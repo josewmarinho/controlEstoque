@@ -10,16 +10,28 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    mw_gestaocolaboradores.cpp \
+    mw_gestaoestoque.cpp \
+    mw_gestaovendas.cpp \
     mw_logar.cpp \
+    mw_novavenda.cpp \
     mw_principal.cpp
 
 HEADERS += \
     Conexao.h \
+    mw_gestaocolaboradores.h \
+    mw_gestaoestoque.h \
+    mw_gestaovendas.h \
     mw_logar.h \
+    mw_novavenda.h \
     mw_principal.h
 
 FORMS += \
+    mw_gestaocolaboradores.ui \
+    mw_gestaoestoque.ui \
+    mw_gestaovendas.ui \
     mw_logar.ui \
+    mw_novavenda.ui \
     mw_principal.ui
 
 TRANSLATIONS += \

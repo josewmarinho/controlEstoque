@@ -17,12 +17,21 @@ public:
     ~mw_principal();
     QIcon cadFechado;
     QIcon *cadAberto=new QIcon();
-    bool logado;
-    QString nome_colab,acesso_colab;
+    static bool logado;
+    static QString nome_colab,acesso_colab,username_colab;
+    static int id_colab;
 
 
 private slots:
     void on_btn_bloquear_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_actionEstoque_triggered();
+
+    void on_actionColaboradores_triggered();
+
+    void on_actionVendas_triggered();
 
 private:
     Ui::mw_principal *ui;

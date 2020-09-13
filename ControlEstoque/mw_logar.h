@@ -18,9 +18,7 @@ public:
     bool logado;
     Conexao con;
     QString nome,acesso;
-    QString getNome();
-    QString getAcesso();
-    bool getLogado();
+    int id;
 
 private slots:
     void on_btn_logar_clicked();

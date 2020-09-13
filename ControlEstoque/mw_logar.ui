@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>398</width>
-    <height>300</height>
+    <width>514</width>
+    <height>363</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>50</y>
-     <width>351</width>
-     <height>111</height>
+     <x>100</x>
+     <y>100</y>
+     <width>271</width>
+     <height>131</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -48,6 +48,9 @@
       </item>
       <item>
        <widget class="QLineEdit" name="txt_senha">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
         </property>

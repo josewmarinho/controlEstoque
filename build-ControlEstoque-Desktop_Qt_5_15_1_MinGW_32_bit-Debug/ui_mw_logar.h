@@ -24,7 +24,7 @@ QT_BEGIN_NAMESPACE
 class Ui_mw_logar
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
@@ -40,21 +40,21 @@ public:
     {
         if (mw_logar->objectName().isEmpty())
             mw_logar->setObjectName(QString::fromUtf8("mw_logar"));
-        mw_logar->resize(398, 300);
-        widget = new QWidget(mw_logar);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(20, 50, 351, 111));
-        verticalLayout = new QVBoxLayout(widget);
+        mw_logar->resize(514, 363);
+        layoutWidget = new QWidget(mw_logar);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(100, 100, 271, 131));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
 
         horizontalLayout->addWidget(label);
 
-        txt_username = new QLineEdit(widget);
+        txt_username = new QLineEdit(layoutWidget);
         txt_username->setObjectName(QString::fromUtf8("txt_username"));
 
         horizontalLayout->addWidget(txt_username);
@@ -64,13 +64,14 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         horizontalLayout_2->addWidget(label_2);
 
-        txt_senha = new QLineEdit(widget);
+        txt_senha = new QLineEdit(layoutWidget);
         txt_senha->setObjectName(QString::fromUtf8("txt_senha"));
+        txt_senha->setEnabled(true);
         txt_senha->setEchoMode(QLineEdit::Password);
 
         horizontalLayout_2->addWidget(txt_senha);
@@ -80,12 +81,12 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        btn_logar = new QPushButton(widget);
+        btn_logar = new QPushButton(layoutWidget);
         btn_logar->setObjectName(QString::fromUtf8("btn_logar"));
 
         horizontalLayout_3->addWidget(btn_logar);
 
-        btn_cancelar = new QPushButton(widget);
+        btn_cancelar = new QPushButton(layoutWidget);
         btn_cancelar->setObjectName(QString::fromUtf8("btn_cancelar"));
 
         horizontalLayout_3->addWidget(btn_cancelar);
