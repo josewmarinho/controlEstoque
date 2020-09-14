@@ -17,9 +17,7 @@ public:
     ~mw_principal();
     QIcon cadFechado;
     QIcon *cadAberto=new QIcon();
-    static bool logado;
-    static QString nome_colab,acesso_colab,username_colab;
-    static int id_colab;
+
 
 
 private slots:

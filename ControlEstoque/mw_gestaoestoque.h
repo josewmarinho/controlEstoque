@@ -18,7 +18,7 @@ public:
     explicit mw_gestaoEstoque(QWidget *parent = nullptr);
     ~mw_gestaoEstoque();
     Conexao con;
-    void removerLinhas(QTableWidget *tw);
+
 
 private slots:
     void on_btn_novoproduto_clicked();

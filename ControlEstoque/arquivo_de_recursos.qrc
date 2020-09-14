@@ -2,5 +2,7 @@
     <qresource prefix="/imagens">
         <file>imgs/cadeadoaberto.png</file>
         <file>imgs/cadeadofechado.png</file>
+        <file>imgs/Logo.png</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

@@ -1,4 +1,6 @@
+release/funcoes_globais.o
 release/main.o
+release/mw_editarprodutovenda.o
 release/mw_gestaocolaboradores.o
 release/mw_gestaoestoque.o
 release/mw_gestaovendas.o
@@ -6,6 +8,7 @@ release/mw_logar.o
 release/mw_novavenda.o
 release/mw_principal.o
 release/qrc_arquivo_de_recursos.o
+release/moc_mw_editarprodutovenda.o
 release/moc_mw_gestaocolaboradores.o
 release/moc_mw_gestaoestoque.o
 release/moc_mw_gestaovendas.o

@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,7 +9,9 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    funcoes_globais.cpp \
     main.cpp \
+    mw_editarprodutovenda.cpp \
     mw_gestaocolaboradores.cpp \
     mw_gestaoestoque.cpp \
     mw_gestaovendas.cpp \
@@ -19,14 +21,18 @@ SOURCES += \
 
 HEADERS += \
     Conexao.h \
+    funcoes_globais.h \
+    mw_editarprodutovenda.h \
     mw_gestaocolaboradores.h \
     mw_gestaoestoque.h \
     mw_gestaovendas.h \
     mw_logar.h \
     mw_novavenda.h \
-    mw_principal.h
+    mw_principal.h \
+    variaveis_globais.h
 
 FORMS += \
+    mw_editarprodutovenda.ui \
     mw_gestaocolaboradores.ui \
     mw_gestaoestoque.ui \
     mw_gestaovendas.ui \

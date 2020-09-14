@@ -2,6 +2,7 @@
 #include "ui_mw_logar.h"
 #include <QMessageBox>
 #include "mw_principal.h"
+#include "variaveis_globais.h"
 
 
 mw_logar::mw_logar(QWidget *parent) :
@@ -33,10 +34,10 @@ void mw_logar::on_btn_logar_clicked()
         if(query.exec()){
              query.first();
              if(query.value(1).toString()!=""){
-                 mw_principal::logado=true;
-                 mw_principal::nome_colab=query.value(1).toString();
-                 mw_principal::id_colab=query.value(0).toInt();
-                 mw_principal::acesso_colab=query.value(5).toString();
+                 variaveis_globais::logado=true;
+                 variaveis_globais::nome_colab=query.value(1).toString();
+                 variaveis_globais::id_colab=query.value(0).toInt();
+                 variaveis_globais::acesso_colab=query.value(5).toString();
                  con.fechar();
                  close();
              }else{

@@ -2,6 +2,9 @@
 #define MW_NOVAVENDA_H
 
 #include <QDialog>
+#include "Conexao.h"
+#include <QtSql>
+#include <QTableWidget>
 
 namespace Ui {
 class mw_novavenda;
@@ -14,6 +17,22 @@ class mw_novavenda : public QDialog
 public:
     explicit mw_novavenda(QWidget *parent = nullptr);
     ~mw_novavenda();
+    Conexao con;
+    int contlinhas;
+    void resetaCampos();
+    double calculaTotal(QTableWidget *tw, int coluna);
+    static QString g_idpord,g_prod,g_qtde,g_valuni,g_valtotal;
+    static bool alterou;
+    void removerLinhas(QTableWidget *tw);
+
+private slots:
+    void on_txt_codproduto_returnPressed();
+
+    void on_btn_excluirproduto_clicked();
+
+    void on_btn_editarproduto_clicked();
+
+    void on_btn_finalizarvenda_clicked();
 
 private:
     Ui::mw_novavenda *ui;

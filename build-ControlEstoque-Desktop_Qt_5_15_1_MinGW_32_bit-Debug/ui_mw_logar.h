@@ -104,7 +104,9 @@ public:
     {
         mw_logar->setWindowTitle(QCoreApplication::translate("mw_logar", "Dialog", nullptr));
         label->setText(QCoreApplication::translate("mw_logar", "Username", nullptr));
+        txt_username->setText(QCoreApplication::translate("mw_logar", "jose", nullptr));
         label_2->setText(QCoreApplication::translate("mw_logar", "Senha", nullptr));
+        txt_senha->setText(QCoreApplication::translate("mw_logar", "123456", nullptr));
         btn_logar->setText(QCoreApplication::translate("mw_logar", "ENTRAR", nullptr));
         btn_cancelar->setText(QCoreApplication::translate("mw_logar", "SAIR", nullptr));
     } // retranslateUi

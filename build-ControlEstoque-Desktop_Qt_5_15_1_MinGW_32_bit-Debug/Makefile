@@ -272,6 +272,7 @@ Makefile: ../ControlEstoque/ControlEstoque.pro ../../../Qt/5.15.1/mingw81_32/mks
 		../../../Qt/5.15.1/mingw81_32/mkspecs/features/yacc.prf \
 		../../../Qt/5.15.1/mingw81_32/mkspecs/features/lex.prf \
 		../ControlEstoque/ControlEstoque.pro \
+		../../../Qt/5.15.1/mingw81_32/lib/Qt5PrintSupport.prl \
 		../../../Qt/5.15.1/mingw81_32/lib/Qt5Widgets.prl \
 		../../../Qt/5.15.1/mingw81_32/lib/Qt5Gui.prl \
 		../../../Qt/5.15.1/mingw81_32/lib/Qt5Sql.prl \
@@ -482,6 +483,7 @@ Makefile: ../ControlEstoque/ControlEstoque.pro ../../../Qt/5.15.1/mingw81_32/mks
 ../../../Qt/5.15.1/mingw81_32/mkspecs/features/yacc.prf:
 ../../../Qt/5.15.1/mingw81_32/mkspecs/features/lex.prf:
 ../ControlEstoque/ControlEstoque.pro:
+../../../Qt/5.15.1/mingw81_32/lib/Qt5PrintSupport.prl:
 ../../../Qt/5.15.1/mingw81_32/lib/Qt5Widgets.prl:
 ../../../Qt/5.15.1/mingw81_32/lib/Qt5Gui.prl:
 ../../../Qt/5.15.1/mingw81_32/lib/Qt5Sql.prl:

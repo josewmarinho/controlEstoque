@@ -96,7 +96,7 @@ public:
     {
         if (mw_gestaoEstoque->objectName().isEmpty())
             mw_gestaoEstoque->setObjectName(QString::fromUtf8("mw_gestaoEstoque"));
-        mw_gestaoEstoque->resize(916, 584);
+        mw_gestaoEstoque->resize(797, 584);
         tabWidget = new QTabWidget(mw_gestaoEstoque);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setGeometry(QRect(50, 30, 691, 491));

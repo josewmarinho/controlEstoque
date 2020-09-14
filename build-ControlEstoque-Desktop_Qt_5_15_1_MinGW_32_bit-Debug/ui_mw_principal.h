@@ -44,7 +44,7 @@ public:
         if (mw_principal->objectName().isEmpty())
             mw_principal->setObjectName(QString::fromUtf8("mw_principal"));
         mw_principal->setEnabled(true);
-        mw_principal->resize(944, 692);
+        mw_principal->resize(588, 356);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -74,7 +74,7 @@ public:
         btn_bloquear->setFlat(true);
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(390, 40, 171, 41));
+        pushButton_2->setGeometry(QRect(190, 50, 171, 41));
         pushButton_2->setStyleSheet(QString::fromUtf8("background:#248;\n"
 "color:#fff;\n"
 "font-size:16pt;\n"
@@ -92,7 +92,7 @@ public:
         mw_principal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(mw_principal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 944, 21));
+        menubar->setGeometry(QRect(0, 0, 588, 21));
         menuGest_o = new QMenu(menubar);
         menuGest_o->setObjectName(QString::fromUtf8("menuGest_o"));
         menuSistema = new QMenu(menubar);

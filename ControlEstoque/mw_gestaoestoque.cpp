@@ -1,6 +1,7 @@
 #include "mw_gestaoestoque.h"
 #include "ui_mw_gestaoestoque.h"
 #include <QtSql>
+#include "funcoes_globais.h"
 
 mw_gestaoEstoque::mw_gestaoEstoque(QWidget *parent) :
     QDialog(parent),
@@ -75,7 +76,7 @@ void mw_gestaoEstoque::on_btn_gravarnovoproduto_clicked()
 void mw_gestaoEstoque::on_tabWidget_currentChanged(int index)
 {
     if(index==1){
-        removerLinhas(ui->tw_ge_produtos);
+        funcoes_globais::removerLinhas(ui->tw_ge_produtos);
         int contlinhas=0;
         //Remover os produtos do TW
         QSqlQuery query;
@@ -101,11 +102,7 @@ void mw_gestaoEstoque::on_tabWidget_currentChanged(int index)
         }
     }
 }
-void mw_gestaoEstoque::removerLinhas(QTableWidget *tw){
-    while(tw->rowCount()>0){
-        tw->removeRow(0);
-    }
-}
+
 
 void mw_gestaoEstoque::on_tw_ge_produtos_itemSelectionChanged()
 {
@@ -179,7 +176,7 @@ void mw_gestaoEstoque::on_btn_ge_excluir_clicked()
 void mw_gestaoEstoque::on_btn_ge_filtrar_clicked()
 {
     QString busca;
-    removerLinhas(ui->tw_ge_produtos);
+    funcoes_globais::removerLinhas(ui->tw_ge_produtos);
     if(ui->txt_ge_filtrar->text()==""){
         if(ui->rb_ge_codigo->isChecked()){
             busca="select id_produto,produto from tb_produtos order by id_produto";

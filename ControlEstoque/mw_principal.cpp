@@ -6,12 +6,13 @@
 #include "mw_gestaocolaboradores.h"
 #include "mw_gestaoestoque.h"
 #include "mw_gestaovendas.h"
+#include "variaveis_globais.h"
 
-int mw_principal::id_colab;
-QString mw_principal::nome_colab;
-QString mw_principal::acesso_colab;
-QString mw_principal::username_colab;
-bool mw_principal::logado;
+int variaveis_globais::id_colab;
+QString variaveis_globais::nome_colab;
+QString variaveis_globais::acesso_colab;
+QString variaveis_globais::username_colab;
+bool variaveis_globais::logado;
 
 mw_principal::mw_principal(QWidget *parent)
     : QMainWindow(parent)
@@ -21,7 +22,7 @@ mw_principal::mw_principal(QWidget *parent)
 
 
 
-    logado=false;
+    variaveis_globais::logado=false;
     cadFechado.addFile(":/imagens/imgs/cadeadofechado.png");
     cadAberto->addFile(":/imagens/imgs/cadeadoaberto.png");
 
@@ -39,15 +40,15 @@ mw_principal::~mw_principal()
 
 void mw_principal::on_btn_bloquear_clicked()
 {
-    if(!logado){
+    if(!variaveis_globais::logado){
         mw_logar f_logar;
         f_logar.exec();
-        if(logado){
+        if(variaveis_globais::logado){
             ui->btn_bloquear->setIcon(*cadAberto);
-            ui->lb_nome->setText(nome_colab);
+            ui->lb_nome->setText(variaveis_globais::nome_colab);
         }
     }else{
-        logado=false;
+        variaveis_globais::logado=false;
         ui->btn_bloquear->setIcon(cadFechado);
         ui->lb_nome->setText("Sem Colaborador");
     }
@@ -55,7 +56,7 @@ void mw_principal::on_btn_bloquear_clicked()
 
 void mw_principal::on_pushButton_2_clicked()
 {
-    if(logado){
+    if(variaveis_globais::logado){
         mw_novavenda f_novavenda;
         f_novavenda.exec();
    }else{
@@ -65,8 +66,8 @@ void mw_principal::on_pushButton_2_clicked()
 
 void mw_principal::on_actionEstoque_triggered()
 {
-    if(logado){
-        if(acesso_colab=="A"){
+    if(variaveis_globais::logado){
+        if(variaveis_globais::acesso_colab=="A"){
         mw_gestaoEstoque f_gestaoEstoque;
         f_gestaoEstoque.exec();
         }else{
@@ -79,8 +80,8 @@ void mw_principal::on_actionEstoque_triggered()
 
 void mw_principal::on_actionColaboradores_triggered()
 {
-    if(logado){
-        if(acesso_colab=="A"){
+    if(variaveis_globais::logado){
+        if(variaveis_globais::acesso_colab=="A"){
         mw_gestaoColaboradores f_gestaoColaboradores;
         f_gestaoColaboradores.exec();
         }else{
@@ -93,8 +94,8 @@ void mw_principal::on_actionColaboradores_triggered()
 
 void mw_principal::on_actionVendas_triggered()
 {
-    if(logado){
-        if(acesso_colab=="A"){
+    if(variaveis_globais::logado){
+        if(variaveis_globais::acesso_colab=="A"){
         mw_gestaoVendas f_gestaoVendas;
         f_gestaoVendas.exec();
         }else{
