@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Gestão Venda</string>
   </property>
   <widget class="QDateEdit" name="de_dataini">
    <property name="geometry">

@@ -83,6 +83,7 @@ void mw_gestaoVendas::on_tw_listaVendas_itemSelectionChanged()
 
 void mw_gestaoVendas::on_btn_filtrar_clicked()
 {
+    ui->tw_listaVendas->clearContents();
     ui->tw_listaVendas->setRowCount(0);
     con.abrir();
     int contLinhas=0;

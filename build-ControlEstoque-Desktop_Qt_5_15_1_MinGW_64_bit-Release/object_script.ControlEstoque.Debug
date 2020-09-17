@@ -1,0 +1,17 @@
+debug/funcoes_globais.o
+debug/main.o
+debug/mw_editarprodutovenda.o
+debug/mw_gestaocolaboradores.o
+debug/mw_gestaoestoque.o
+debug/mw_gestaovendas.o
+debug/mw_logar.o
+debug/mw_novavenda.o
+debug/mw_principal.o
+debug/qrc_arquivo_de_recursos.o
+debug/moc_mw_editarprodutovenda.o
+debug/moc_mw_gestaocolaboradores.o
+debug/moc_mw_gestaoestoque.o
+debug/moc_mw_gestaovendas.o
+debug/moc_mw_logar.o
+debug/moc_mw_novavenda.o
+debug/moc_mw_principal.o

@@ -76,7 +76,9 @@ void mw_gestaoEstoque::on_btn_gravarnovoproduto_clicked()
 void mw_gestaoEstoque::on_tabWidget_currentChanged(int index)
 {
     if(index==1){
-        funcoes_globais::removerLinhas(ui->tw_ge_produtos);
+        ui->tw_ge_produtos->clearContents();
+        ui->tw_ge_produtos->setRowCount(0);
+        //funcoes_globais::removerLinhas(ui->tw_ge_produtos);
         int contlinhas=0;
         //Remover os produtos do TW
         QSqlQuery query;
@@ -176,7 +178,9 @@ void mw_gestaoEstoque::on_btn_ge_excluir_clicked()
 void mw_gestaoEstoque::on_btn_ge_filtrar_clicked()
 {
     QString busca;
-    funcoes_globais::removerLinhas(ui->tw_ge_produtos);
+    ui->tw_ge_produtos->clearContents();
+    ui->tw_ge_produtos->setRowCount(0);
+    //funcoes_globais::removerLinhas(ui->tw_ge_produtos);
     if(ui->txt_ge_filtrar->text()==""){
         if(ui->rb_ge_codigo->isChecked()){
             busca="select id_produto,produto from tb_produtos order by id_produto";

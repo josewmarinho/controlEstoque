@@ -6,18 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>514</width>
-    <height>363</height>
+    <width>321</width>
+    <height>160</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Tela Login</string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>100</y>
+     <x>20</x>
+     <y>0</y>
      <width>271</width>
      <height>131</height>
     </rect>
@@ -56,7 +56,7 @@
          <bool>true</bool>
         </property>
         <property name="text">
-         <string>123456</string>
+         <string>123</string>
         </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>

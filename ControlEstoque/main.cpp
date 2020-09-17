@@ -1,4 +1,5 @@
 #include "mw_principal.h"
+#include "mw_logar.h"
 
 #include <QApplication>
 

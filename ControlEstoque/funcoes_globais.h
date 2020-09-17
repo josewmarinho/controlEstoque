@@ -7,7 +7,7 @@ class funcoes_globais
 {
 public:
     funcoes_globais();
-    static  void removerLinhas(QTableWidget *tw);
+    static void removerLinhas(QTableWidget *tw);
 };
 
 #endif // FUNCOES_GLOBAIS_H

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "Conexao.h"
+#include <QTableWidget>
 
 namespace Ui {
 class mw_gestaoColaboradores;

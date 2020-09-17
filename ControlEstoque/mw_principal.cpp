@@ -8,6 +8,7 @@
 #include "mw_gestaovendas.h"
 #include "variaveis_globais.h"
 
+
 int variaveis_globais::id_colab;
 QString variaveis_globais::nome_colab;
 QString variaveis_globais::acesso_colab;
@@ -20,8 +21,6 @@ mw_principal::mw_principal(QWidget *parent)
 {
     ui->setupUi(this);
 
-
-
     variaveis_globais::logado=false;
     cadFechado.addFile(":/imagens/imgs/cadeadofechado.png");
     cadAberto->addFile(":/imagens/imgs/cadeadoaberto.png");
@@ -30,6 +29,7 @@ mw_principal::mw_principal(QWidget *parent)
     ui->btn_bloquear->setIcon(cadFechado);
     ui->statusbar->addWidget(ui->btn_bloquear);
     ui->statusbar->addWidget(ui->lb_nome);
+
 }
 
 mw_principal::~mw_principal()
@@ -105,3 +105,4 @@ void mw_principal::on_actionVendas_triggered()
         QMessageBox::information(this,"LOGIN","Não existe colaborador logado!");
     }
 }
+

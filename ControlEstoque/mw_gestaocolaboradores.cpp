@@ -80,7 +80,9 @@ void mw_gestaoColaboradores::on_btn_cancelar_novocolab_clicked()
 void mw_gestaoColaboradores::on_tabWidget_currentChanged(int index)
 {
     if(index==1){
-        funcoes_globais::removerLinhas(ui->tw_ge_listacolab);
+        ui->tw_ge_listacolab->clearContents();
+        ui->tw_ge_listacolab->setRowCount(0);
+        //funcoes_globais::removerLinhas(ui->tw_ge_listacolab);
         int contlinhas=0;
         QSqlQuery query;
         query.prepare("select id_colab,nome_colab from tb_colaboradores order by id_colab");
@@ -116,7 +118,9 @@ void mw_gestaoColaboradores::on_tw_ge_listacolab_itemSelectionChanged()
 void mw_gestaoColaboradores::on_btn_ge_filtrar_clicked()
 {
     QString busca;
-    funcoes_globais::removerLinhas(ui->tw_ge_listacolab);
+    ui->tw_ge_listacolab->clearContents();
+    ui->tw_ge_listacolab->setRowCount(0);
+    //funcoes_globais::removerLinhas(ui->tw_ge_listacolab);
     if(ui->txt_ge_filtro->text()==""){
         if(ui->rb_ge_idcolab->isChecked()){
             busca="select id_colab,nome_colab from tb_colaboradores order by id_colab";

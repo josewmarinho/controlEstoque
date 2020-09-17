@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Nova Venda</string>
   </property>
   <widget class="QLineEdit" name="txt_qtde">
    <property name="geometry">
