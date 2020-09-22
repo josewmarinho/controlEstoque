@@ -247,6 +247,7 @@ Makefile: ../ControlEstoque/ControlEstoque.pro ../../../Qt/5.15.1/mingw81_32/mks
 		../../../Qt/5.15.1/mingw81_32/mkspecs/features/qt_config.prf \
 		../../../Qt/5.15.1/mingw81_32/mkspecs/win32-g++/qmake.conf \
 		../../../Qt/5.15.1/mingw81_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.15.1/mingw81_32/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.15.1/mingw81_32/mkspecs/features/toolchain.prf \
 		../../../Qt/5.15.1/mingw81_32/mkspecs/features/default_pre.prf \
@@ -277,7 +278,6 @@ Makefile: ../ControlEstoque/ControlEstoque.pro ../../../Qt/5.15.1/mingw81_32/mks
 		../../../Qt/5.15.1/mingw81_32/lib/Qt5Sql.prl \
 		../../../Qt/5.15.1/mingw81_32/lib/Qt5Core.prl \
 		../../../Qt/5.15.1/mingw81_32/lib/qtmain.prl \
-		.qmake.stash \
 		../../../Qt/5.15.1/mingw81_32/mkspecs/features/build_pass.prf \
 		../ControlEstoque/arquivo_de_recursos.qrc
 	$(QMAKE) -o Makefile ..\ControlEstoque\ControlEstoque.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -458,6 +458,7 @@ Makefile: ../ControlEstoque/ControlEstoque.pro ../../../Qt/5.15.1/mingw81_32/mks
 ../../../Qt/5.15.1/mingw81_32/mkspecs/features/qt_config.prf:
 ../../../Qt/5.15.1/mingw81_32/mkspecs/win32-g++/qmake.conf:
 ../../../Qt/5.15.1/mingw81_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.15.1/mingw81_32/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.15.1/mingw81_32/mkspecs/features/toolchain.prf:
 ../../../Qt/5.15.1/mingw81_32/mkspecs/features/default_pre.prf:
@@ -488,7 +489,6 @@ Makefile: ../ControlEstoque/ControlEstoque.pro ../../../Qt/5.15.1/mingw81_32/mks
 ../../../Qt/5.15.1/mingw81_32/lib/Qt5Sql.prl:
 ../../../Qt/5.15.1/mingw81_32/lib/Qt5Core.prl:
 ../../../Qt/5.15.1/mingw81_32/lib/qtmain.prl:
-.qmake.stash:
 ../../../Qt/5.15.1/mingw81_32/mkspecs/features/build_pass.prf:
 ../ControlEstoque/arquivo_de_recursos.qrc:
 qmake: FORCE

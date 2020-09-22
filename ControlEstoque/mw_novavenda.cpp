@@ -165,7 +165,7 @@ void mw_novavenda::on_btn_finalizarvenda_clicked()
             QString data=QDate::currentDate().toString("dd/MM/yyyy");
             QString hora=QTime::currentTime().toString("hh:mm:ss");
             QSqlQuery query;
-            query.prepare("insert into tb_vendas (data_venda,hora_venda,id_colaborador,valor_total,id_tipo_pagamento) values ('"+data+"','"+hora+"',"+QString::number(variaveis_globais::id_colab)+","+QString::number(total)+",1)");
+            query.prepare("select * from tb_vendas");
             if(!query.exec()){
                 QMessageBox::warning(this,"ERRO","Erro registrar nova venda.");
             }else{
@@ -192,7 +192,9 @@ void mw_novavenda::on_btn_finalizarvenda_clicked()
                     qtdeNovo = qtdeEstoque - qtde.toInt();
                     query.prepare("update tb_produtos set qtde_estoque="+QString::number(qtdeNovo)+" where id_produto="+id);
                     query.exec();
-                    query.prepare("insert into tb_produtosVendas(id_venda,produto,qtde,valor_un,valor_total, id_produto) values("+QString::number(idVenda)+",'"+prod+"',"+qtde+","+valUn+","+valTot+","+id+")");
+                    query.prepare("insert into tb_produtosVendas(id_venda,produto,qtde,valor_un,valor_total,id_produto) values ("+QString::number(idVenda)+",'"+prod+"',"+qtde+","+valUn+","+valTot+","+id+")");
+                    query.exec();
+                    query.prepare("insert into tb_vendas (data_venda,hora_venda,id_colaborador,valor_total,qtde_produto,produto,valor_uni,valor_total_venda) values ('"+data+"','"+hora+"',"+QString::number(variaveis_globais::id_colab)+","+valTot+",'"+qtde+"','"+prod+"',"+valUn+","+QString::number(total)+")");
                     query.exec();
                     linha++;
                 }

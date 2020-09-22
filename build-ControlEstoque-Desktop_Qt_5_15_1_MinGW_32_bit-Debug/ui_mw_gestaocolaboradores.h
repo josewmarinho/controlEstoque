@@ -400,7 +400,7 @@ public:
         label_4->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Telefone", nullptr));
         label_5->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Tipo Acesso", nullptr));
         btn_novo_novocolab->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Novo", nullptr));
-        btn_gravar_novocolab->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Gravar", nullptr));
+        btn_gravar_novocolab->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Salvar", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_novocolaborador), QCoreApplication::translate("mw_gestaoColaboradores", "Novo Colaborador", nullptr));
         groupBox->setTitle(QCoreApplication::translate("mw_gestaoColaboradores", "Filtra por:", nullptr));
         rb_ge_idcolab->setText(QCoreApplication::translate("mw_gestaoColaboradores", "ID Colab", nullptr));
@@ -410,7 +410,7 @@ public:
         label_8->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Senha", nullptr));
         label_9->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Telefone", nullptr));
         label_10->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Acesso", nullptr));
-        btn_ge_gravar->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Gravar", nullptr));
+        btn_ge_gravar->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Salvar", nullptr));
         btn_ge_excluir->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Excluir", nullptr));
         btn_ge_vervendas->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Ver Vendas", nullptr));
         label_12->setText(QCoreApplication::translate("mw_gestaoColaboradores", "Filtro", nullptr));

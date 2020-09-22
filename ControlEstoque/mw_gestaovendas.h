@@ -25,6 +25,8 @@ private slots:
     void on_btn_relatorioPDF_clicked();
 
 
+    void on_btn_filtrar_2_clicked();
+
 private:
     Ui::mw_gestaoVendas *ui;
 };

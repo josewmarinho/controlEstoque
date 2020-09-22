@@ -23,50 +23,42 @@ QT_BEGIN_NAMESPACE
 class Ui_mw_gestaoVendas
 {
 public:
-    QDateEdit *de_dataini;
-    QDateEdit *de_datafim;
     QLabel *label;
+    QDateEdit *de_dataini;
     QLabel *label_2;
+    QDateEdit *de_datafim;
     QPushButton *btn_filtrar;
-    QPushButton *btn_relatorioPDF;
     QTableWidget *tw_listaVendas;
-    QTableWidget *tw_listaProdutosVendas;
-    QPushButton *btn_mostrarTodasVendas;
+    QPushButton *btn_relatorioPDF;
 
     void setupUi(QDialog *mw_gestaoVendas)
     {
         if (mw_gestaoVendas->objectName().isEmpty())
             mw_gestaoVendas->setObjectName(QString::fromUtf8("mw_gestaoVendas"));
-        mw_gestaoVendas->resize(641, 510);
-        de_dataini = new QDateEdit(mw_gestaoVendas);
-        de_dataini->setObjectName(QString::fromUtf8("de_dataini"));
-        de_dataini->setGeometry(QRect(12, 39, 110, 22));
-        de_dataini->setDateTime(QDateTime(QDate(2020, 9, 14), QTime(0, 0, 0)));
-        de_datafim = new QDateEdit(mw_gestaoVendas);
-        de_datafim->setObjectName(QString::fromUtf8("de_datafim"));
-        de_datafim->setGeometry(QRect(139, 39, 110, 22));
-        de_datafim->setDateTime(QDateTime(QDate(2020, 12, 31), QTime(0, 0, 0)));
+        mw_gestaoVendas->resize(868, 537);
         label = new QLabel(mw_gestaoVendas);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(15, 16, 61, 16));
+        label->setGeometry(QRect(22, 24, 61, 16));
+        de_dataini = new QDateEdit(mw_gestaoVendas);
+        de_dataini->setObjectName(QString::fromUtf8("de_dataini"));
+        de_dataini->setGeometry(QRect(20, 50, 110, 22));
+        de_dataini->setDateTime(QDateTime(QDate(2020, 9, 14), QTime(0, 0, 0)));
         label_2 = new QLabel(mw_gestaoVendas);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(142, 16, 61, 16));
+        label_2->setGeometry(QRect(147, 23, 61, 16));
+        de_datafim = new QDateEdit(mw_gestaoVendas);
+        de_datafim->setObjectName(QString::fromUtf8("de_datafim"));
+        de_datafim->setGeometry(QRect(144, 51, 110, 22));
+        de_datafim->setDateTime(QDateTime(QDate(2020, 12, 31), QTime(0, 0, 0)));
         btn_filtrar = new QPushButton(mw_gestaoVendas);
         btn_filtrar->setObjectName(QString::fromUtf8("btn_filtrar"));
-        btn_filtrar->setGeometry(QRect(269, 38, 75, 23));
-        btn_relatorioPDF = new QPushButton(mw_gestaoVendas);
-        btn_relatorioPDF->setObjectName(QString::fromUtf8("btn_relatorioPDF"));
-        btn_relatorioPDF->setGeometry(QRect(8, 460, 151, 23));
+        btn_filtrar->setGeometry(QRect(270, 50, 75, 23));
         tw_listaVendas = new QTableWidget(mw_gestaoVendas);
         tw_listaVendas->setObjectName(QString::fromUtf8("tw_listaVendas"));
-        tw_listaVendas->setGeometry(QRect(10, 71, 611, 121));
-        tw_listaProdutosVendas = new QTableWidget(mw_gestaoVendas);
-        tw_listaProdutosVendas->setObjectName(QString::fromUtf8("tw_listaProdutosVendas"));
-        tw_listaProdutosVendas->setGeometry(QRect(9, 200, 611, 251));
-        btn_mostrarTodasVendas = new QPushButton(mw_gestaoVendas);
-        btn_mostrarTodasVendas->setObjectName(QString::fromUtf8("btn_mostrarTodasVendas"));
-        btn_mostrarTodasVendas->setGeometry(QRect(360, 37, 121, 23));
+        tw_listaVendas->setGeometry(QRect(10, 100, 831, 371));
+        btn_relatorioPDF = new QPushButton(mw_gestaoVendas);
+        btn_relatorioPDF->setObjectName(QString::fromUtf8("btn_relatorioPDF"));
+        btn_relatorioPDF->setGeometry(QRect(10, 490, 151, 23));
 
         retranslateUi(mw_gestaoVendas);
 
@@ -80,7 +72,6 @@ public:
         label_2->setText(QCoreApplication::translate("mw_gestaoVendas", "Data Final", nullptr));
         btn_filtrar->setText(QCoreApplication::translate("mw_gestaoVendas", "Filtrar", nullptr));
         btn_relatorioPDF->setText(QCoreApplication::translate("mw_gestaoVendas", "Gerar Relat\303\263rio em PDF", nullptr));
-        btn_mostrarTodasVendas->setText(QCoreApplication::translate("mw_gestaoVendas", "Mostrar todas vendas", nullptr));
     } // retranslateUi
 
 };

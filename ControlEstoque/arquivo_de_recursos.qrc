@@ -3,6 +3,7 @@
         <file>imgs/cadeadoaberto.png</file>
         <file>imgs/cadeadofechado.png</file>
         <file>imgs/Logo.png</file>
+        <file>imgs/titulo.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

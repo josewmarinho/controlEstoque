@@ -179,7 +179,7 @@
         <item>
          <widget class="QPushButton" name="btn_gravar_novocolab">
           <property name="text">
-           <string>Gravar</string>
+           <string>Salvar</string>
           </property>
          </widget>
         </item>
@@ -350,7 +350,7 @@
         <item>
          <widget class="QPushButton" name="btn_ge_gravar">
           <property name="text">
-           <string>Gravar</string>
+           <string>Salvar</string>
           </property>
          </widget>
         </item>

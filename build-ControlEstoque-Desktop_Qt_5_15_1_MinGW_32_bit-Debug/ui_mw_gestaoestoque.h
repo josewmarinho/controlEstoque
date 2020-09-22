@@ -386,7 +386,7 @@ public:
 
         retranslateUi(mw_gestaoEstoque);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(mw_gestaoEstoque);

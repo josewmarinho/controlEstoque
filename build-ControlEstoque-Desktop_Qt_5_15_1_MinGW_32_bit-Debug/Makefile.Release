@@ -147,6 +147,7 @@ compiler_rcc_clean:
 release/qrc_arquivo_de_recursos.cpp: ../ControlEstoque/arquivo_de_recursos.qrc \
 		../../../Qt/5.15.1/mingw81_32/bin/rcc.exe \
 		../ControlEstoque/imgs/Logo.png \
+		../ControlEstoque/imgs/titulo.png \
 		../ControlEstoque/imgs/cadeadofechado.png \
 		../ControlEstoque/imgs/cadeadoaberto.png
 	C:\Qt\5.15.1\mingw81_32\bin\rcc.exe -name arquivo_de_recursos ..\ControlEstoque\arquivo_de_recursos.qrc -o release\qrc_arquivo_de_recursos.cpp
@@ -2467,6 +2468,35 @@ release/mw_editarprodutovenda.o: ../ControlEstoque/mw_editarprodutovenda.cpp ../
 		../../../Qt/5.15.1/mingw81_32/include/QtGui/qvector2d.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtouchdevice.h \
 		ui_mw_editarprodutovenda.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/QVariant \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QApplication \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/qeventloop.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLabel \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qframe.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLineEdit \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextcursor.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextformat.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qpen.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextoption.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QPushButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qicon.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QSpacerItem \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QWidget \
 		../ControlEstoque/mw_novavenda.h \
 		../ControlEstoque/Conexao.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtSql/QtSql \
@@ -2475,7 +2505,6 @@ release/mw_editarprodutovenda.o: ../ControlEstoque/mw_editarprodutovenda.cpp ../
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/QtCoreDepends \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qabstractanimation.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qabstracteventdispatcher.h \
-		../../../Qt/5.15.1/mingw81_32/include/QtCore/qeventloop.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qabstractnativeeventfilter.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qabstractproxymodel.h \
@@ -2504,7 +2533,6 @@ release/mw_editarprodutovenda.o: ../ControlEstoque/mw_editarprodutovenda.cpp ../
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qcollator.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qcommandlineoption.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qcommandlineparser.h \
-		../../../Qt/5.15.1/mingw81_32/include/QtCore/qcoreapplication.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qconcatenatetablesproxymodel.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qcryptographichash.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/qdeadlinetimer.h \
@@ -2615,14 +2643,12 @@ release/mw_editarprodutovenda.o: ../ControlEstoque/mw_editarprodutovenda.cpp ../
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qstyleoption.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractspinbox.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtGui/qvalidator.h \
-		../../../Qt/5.15.1/mingw81_32/include/QtGui/qicon.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qslider.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractslider.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qstyle.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtabbar.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtabwidget.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qrubberband.h \
-		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qframe.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlistview.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractitemview.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractscrollarea.h \
@@ -2908,6 +2934,39 @@ release/mw_gestaocolaboradores.o: ../ControlEstoque/mw_gestaocolaboradores.cpp .
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtablewidget.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtableview.h \
 		ui_mw_gestaocolaboradores.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/QVariant \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QApplication \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QComboBox \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QGroupBox \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qgroupbox.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QHeaderView \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLabel \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLineEdit \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextcursor.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextformat.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qpen.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextoption.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QPushButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QRadioButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qradiobutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QSpacerItem \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QTabWidget \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QWidget \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QMessageBox \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qmessagebox.h \
 		../ControlEstoque/funcoes_globais.h
@@ -3187,6 +3246,38 @@ release/mw_gestaoestoque.o: ../ControlEstoque/mw_gestaoestoque.cpp ../ControlEst
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtablewidget.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtableview.h \
 		ui_mw_gestaoestoque.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/QVariant \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QApplication \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QGroupBox \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qgroupbox.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QHeaderView \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLabel \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLineEdit \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextcursor.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextformat.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qpen.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextoption.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QPushButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QRadioButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qradiobutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QSpacerItem \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QTabWidget \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QWidget \
 		../ControlEstoque/funcoes_globais.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mw_gestaoestoque.o ..\ControlEstoque\mw_gestaoestoque.cpp
 
@@ -3459,6 +3550,24 @@ release/mw_gestaovendas.o: ../ControlEstoque/mw_gestaovendas.cpp ../ControlEstoq
 		../../../Qt/5.15.1/mingw81_32/include/QtSql/qsqlresult.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtSql/qtsqlversion.h \
 		ui_mw_gestaovendas.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/QVariant \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QApplication \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QDateEdit \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdatetimeedit.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QHeaderView \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLabel \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QPushButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QTableWidget \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtablewidget.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtableview.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtCore/QDebug \
 		../../../Qt/5.15.1/mingw81_32/include/QtPrintSupport/QPrinter \
 		../../../Qt/5.15.1/mingw81_32/include/QtPrintSupport/qprinter.h \
@@ -3745,6 +3854,30 @@ release/mw_logar.o: ../ControlEstoque/mw_logar.cpp ../ControlEstoque/mw_logar.h 
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QDialog \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdialog.h \
 		ui_mw_logar.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/QVariant \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QApplication \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLabel \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLineEdit \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextcursor.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextformat.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qpen.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextoption.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QPushButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QWidget \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QMessageBox \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qmessagebox.h \
 		../ControlEstoque/mw_principal.h \
@@ -4026,6 +4159,29 @@ release/mw_novavenda.o: ../ControlEstoque/mw_novavenda.cpp ../ControlEstoque/mw_
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtablewidget.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qtableview.h \
 		ui_mw_novavenda.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/QVariant \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QApplication \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QGroupBox \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qgroupbox.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QHeaderView \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLabel \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLineEdit \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextcursor.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextformat.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qpen.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qtextoption.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QPushButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QRadioButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qradiobutton.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QMessageBox \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qmessagebox.h \
 		../ControlEstoque/mw_editarprodutovenda.h \
@@ -4304,6 +4460,27 @@ release/mw_principal.o: ../ControlEstoque/mw_principal.cpp ../ControlEstoque/mw_
 		../../../Qt/5.15.1/mingw81_32/include/QtSql/qsqlresult.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtSql/qtsqlversion.h \
 		ui_mw_principal.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtCore/QVariant \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QAction \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qaction.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QApplication \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QLabel \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QMenu \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qmenu.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QMenuBar \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qmenubar.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QPushButton \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QStatusBar \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qstatusbar.h \
+		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QWidget \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/QMessageBox \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.15.1/mingw81_32/include/QtWidgets/qdialog.h \
