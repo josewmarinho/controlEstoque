@@ -7,6 +7,7 @@
 #include "mw_gestaoestoque.h"
 #include "mw_gestaovendas.h"
 #include "variaveis_globais.h"
+#include <cstdlib>
 
 
 int variaveis_globais::id_colab;
@@ -35,6 +36,11 @@ mw_principal::mw_principal(QWidget *parent)
 mw_principal::~mw_principal()
 {
     delete ui;
+}
+
+void mw_principal::fechar()
+{
+    exit(0);
 }
 
 
@@ -106,3 +112,47 @@ void mw_principal::on_actionVendas_triggered()
     }
 }
 
+
+void mw_principal::on_pushButton_3_clicked()
+{
+    if(variaveis_globais::logado){
+        if(variaveis_globais::acesso_colab=="A"){
+        mw_gestaoEstoque f_gestaoEstoque;
+        f_gestaoEstoque.exec();
+        }else{
+            QMessageBox::information(this,"ACESSO","Acesso não permitido!");
+        }
+    }else{
+        QMessageBox::information(this,"LOGIN","Não existe colaborador logado!");
+    }
+}
+
+void mw_principal::on_pushButton_4_clicked()
+{
+    if(variaveis_globais::logado){
+        if(variaveis_globais::acesso_colab=="A"){
+        mw_gestaoVendas f_gestaoVendas;
+        f_gestaoVendas.exec();
+        }else{
+            QMessageBox::information(this,"ACESSO","Acesso não permitido!");
+        }
+    }else{
+        QMessageBox::information(this,"LOGIN","Não existe colaborador logado!");
+    }
+}
+
+void mw_principal::on_pushButton_5_clicked()
+{
+    fechar();
+}
+
+
+void mw_principal::on_actionSair_triggered()
+{
+    fechar();
+}
+
+void mw_principal::on_actionSobre_triggered()
+{
+
+}

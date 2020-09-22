@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>588</width>
+    <width>557</width>
     <height>356</height>
    </rect>
   </property>
@@ -88,13 +88,76 @@ border-radius: 10px;
      <string>Sem Colaborador</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>112</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:#248;
+color:#fff;
+font-size:16pt;
+border:none;
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Gestão Estoque</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>189</x>
+      <y>178</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:#248;
+color:#fff;
+font-size:16pt;
+border:none;
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Gestão Vendas</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>241</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:#FA023C;
+color:#fff;
+font-size:16pt;
+border:none;
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Sair</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>588</width>
+     <width>557</width>
      <height>21</height>
     </rect>
    </property>

@@ -24,16 +24,28 @@ mw_novavenda::mw_novavenda(QWidget *parent) :
 
     ui->tw_listaprodutos->setColumnCount(5);
     ui->tw_listaprodutos->setColumnWidth(0,100);
-    ui->tw_listaprodutos->setColumnWidth(1,200);
-    ui->tw_listaprodutos->setColumnWidth(2,100);
-    ui->tw_listaprodutos->setColumnWidth(3,100);
-    ui->tw_listaprodutos->setColumnWidth(4,100);
+    ui->tw_listaprodutos->setColumnWidth(1,150);
+    ui->tw_listaprodutos->setColumnWidth(2,90);
+    ui->tw_listaprodutos->setColumnWidth(3,70);
+    ui->tw_listaprodutos->setColumnWidth(4,70);
     QStringList cabecalhos={"Código","Produto","Valor Un.","Qtde","Total"};
     ui->tw_listaprodutos->setHorizontalHeaderLabels(cabecalhos);
     ui->tw_listaprodutos->setStyleSheet("QTableView{selection-background-color:green;}");
     ui->tw_listaprodutos->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tw_listaprodutos->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tw_listaprodutos->verticalHeader()->setVisible(false);
+
+
+    ui->tw_listapesquisar->setColumnCount(3);
+    ui->tw_listapesquisar->setColumnWidth(0,100);
+    ui->tw_listapesquisar->setColumnWidth(1,150);
+    ui->tw_listapesquisar->setColumnWidth(2,50);
+    QStringList header={"Código","Produto","Qtde"};
+    ui->tw_listapesquisar->setHorizontalHeaderLabels(header);
+    ui->tw_listapesquisar->setStyleSheet("QTableView{selection-background-color:red;}");
+    ui->tw_listapesquisar->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tw_listapesquisar->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tw_listapesquisar->verticalHeader()->setVisible(false);
 
     ui->txt_codproduto->setFocus();
     contlinhas=0;
@@ -49,6 +61,7 @@ void mw_novavenda::on_txt_codproduto_returnPressed()
     QSqlQuery query;
     QString id=ui->txt_codproduto->text();
     double valtot;
+    contlinhas=0;
     query.prepare("select id_produto,produto,valor_venda from tb_produtos where id_produto="+id);
     if(query.exec()){
         query.first();
@@ -88,7 +101,7 @@ void mw_novavenda::removerLinhas(QTableWidget *tw){
 
 double mw_novavenda::calculaTotal(QTableWidget *tw, int coluna){
     int totallinhas;
-    double total = 0.0;
+    double total = 0.0;  
 
     totallinhas=tw->rowCount();
     for(int i=0;i<totallinhas;i++){
@@ -96,6 +109,15 @@ double mw_novavenda::calculaTotal(QTableWidget *tw, int coluna){
     }
     return total;
 }
+
+double mw_novavenda::calculaTroco(){
+    double trocototal = 0.0;
+
+
+    return trocototal;
+}
+
+
 
 void mw_novavenda::on_btn_excluirproduto_clicked()
 {
@@ -174,4 +196,78 @@ void mw_novavenda::on_btn_finalizarvenda_clicked()
     }else{
         QMessageBox::warning(this,"ERRO","Não existem produtos nessa venda!\nPrimeiro adicione um produto.");
     }
+}
+
+void mw_novavenda::on_pushButton_4_clicked()
+{
+    QSqlQuery query;
+    QString id=ui->txt_codproduto->text();
+    double valtot;
+    contlinhas=0;
+    query.prepare("select id_produto,produto,valor_venda from tb_produtos where id_produto="+id);
+    if(query.exec()){
+        query.first();
+        if(query.value(0).toString()!=""){
+            ui->tw_listaprodutos->insertRow(contlinhas);
+            ui->tw_listaprodutos->setItem(contlinhas,0,new QTableWidgetItem(query.value(0).toString()));
+            ui->tw_listaprodutos->setItem(contlinhas,1,new QTableWidgetItem(query.value(1).toString()));
+            ui->tw_listaprodutos->setItem(contlinhas,2,new QTableWidgetItem(query.value(2).toString()));
+            ui->tw_listaprodutos->setItem(contlinhas,3,new QTableWidgetItem(ui->txt_qtde->text()));
+            valtot=ui->txt_qtde->text().toDouble()*query.value(2).toDouble();
+            ui->tw_listaprodutos->setItem(contlinhas,4,new QTableWidgetItem(QString::number(valtot)));
+            ui->tw_listaprodutos->setRowHeight(contlinhas,20);
+            contlinhas++;
+
+            ui->lb_totalvenda->setText("R$ "+QString::number(calculaTotal(ui->tw_listaprodutos,4)));
+
+            resetaCampos();
+        }else{
+            QMessageBox::warning(this,"ERRO","Produto não encontrado!");
+        }
+    }else{
+        QMessageBox::warning(this,"ERRO","Erro ao inserir novo produto!");
+    }
+}
+
+void mw_novavenda::on_btn_pesquisar_clicked()
+{
+    QString busca;
+    ui->tw_listapesquisar->clearContents();
+    ui->tw_listapesquisar->setRowCount(0);
+    //funcoes_globais::removerLinhas(ui->tw_ge_produtos);
+    if(ui->txt_nomebusca->text()==""){
+        if(ui->rb_nomebusca->isChecked()){
+            busca="select id_produto,produto,qtde_estoque from tb_produtos order by produto";
+        }else{
+            busca="select id_produto,produto,qtde_estoque from tb_produtos order by id_produto";
+        }
+    }else{
+        if(ui->rb_nomebusca->isChecked()){
+            busca="select id_produto,produto,qtde_estoque from tb_produtos where produto like '%"+ui->txt_nomebusca->text()+"%' order by produto";
+        }else{
+            busca="select id_produto,produto,qtde_estoque from tb_produtos where id_produto="+ui->txt_nomebusca->text()+" order by id_produto";
+        }
+    }
+    int contlinhas=0;
+    QSqlQuery query;
+    query.prepare(busca);
+    if(query.exec()){
+        while(query.next()){
+            ui->tw_listapesquisar->insertRow(contlinhas);
+            ui->tw_listapesquisar->setItem(contlinhas,0,new QTableWidgetItem(query.value(0).toString()));
+            ui->tw_listapesquisar->setItem(contlinhas,1,new QTableWidgetItem(query.value(1).toString()));
+            ui->tw_listapesquisar->setItem(contlinhas,3,new QTableWidgetItem(query.value(3).toString()));
+            ui->tw_listapesquisar->setRowHeight(contlinhas,20);
+            contlinhas++;
+        }
+    }else{
+        QMessageBox::warning(this,"ERRO","Erro ao filtrar produto");
+    }
+    ui->txt_nomebusca->clear();
+}
+
+void mw_novavenda::on_txt_valorrecebido_returnPressed()
+{
+    double total=calculaTotal(ui->tw_listaprodutos,4);
+    ui->lb_troco->setText("R$ "+QString::number(total));
 }

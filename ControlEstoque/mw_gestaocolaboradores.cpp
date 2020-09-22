@@ -16,8 +16,10 @@ mw_gestaoColaboradores::mw_gestaoColaboradores(QWidget *parent) :
 
     ui->cb_acesso_novocolab->addItem("A");
     ui->cb_acesso_novocolab->addItem("B");
+    ui->cb_acesso_novocolab->addItem("C");
     ui->cb_ge_acesso->addItem("A");
     ui->cb_ge_acesso->addItem("B");
+    ui->cb_ge_acesso->addItem("C");
     ui->txt_nome_novocolab->setFocus();
 
     ui->tabWidget->setCurrentIndex(0);

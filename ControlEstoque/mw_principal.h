@@ -17,6 +17,7 @@ public:
     ~mw_principal();
     QIcon cadFechado;
     QIcon *cadAberto=new QIcon();
+    void fechar();
 
 
 
@@ -30,6 +31,16 @@ private slots:
     void on_actionColaboradores_triggered();
 
     void on_actionVendas_triggered();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_actionSair_triggered();
+
+    void on_actionSobre_triggered();
 
 private:
     Ui::mw_principal *ui;

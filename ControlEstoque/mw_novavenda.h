@@ -21,6 +21,7 @@ public:
     int contlinhas;
     void resetaCampos();
     double calculaTotal(QTableWidget *tw, int coluna);
+    double calculaTroco();
     static QString g_idpord,g_prod,g_qtde,g_valuni,g_valtotal;
     static bool alterou;
     void removerLinhas(QTableWidget *tw);
@@ -33,6 +34,12 @@ private slots:
     void on_btn_editarproduto_clicked();
 
     void on_btn_finalizarvenda_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_btn_pesquisar_clicked();
+
+    void on_txt_valorrecebido_returnPressed();
 
 private:
     Ui::mw_novavenda *ui;

@@ -16,7 +16,7 @@ public:
         bancoDedados.close();
     }
     bool abrir(){
-        bancoDedados.setDatabaseName("C:/project/ControleEstoque/ControlEstoque/db/controlEstoque.db");
+        bancoDedados.setDatabaseName(banco);
         if(!bancoDedados.open()){
            return false;
         }else{
