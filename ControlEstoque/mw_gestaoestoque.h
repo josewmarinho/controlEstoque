@@ -35,6 +35,10 @@ private slots:
 
     void on_btn_ge_filtrar_clicked();
 
+    void on_txt_porcevenda_textChanged(const QString &arg1);
+
+    void on_txt_ge_porcevenda_textChanged(const QString &arg1);
+
 private:
     Ui::mw_gestaoEstoque *ui;
 };

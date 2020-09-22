@@ -41,6 +41,8 @@ private slots:
 
     void on_txt_valorrecebido_returnPressed();
 
+    void on_tw_listaprodutos_cellDoubleClicked(int row, int column);
+
 private:
     Ui::mw_novavenda *ui;
 };

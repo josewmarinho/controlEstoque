@@ -51,14 +51,15 @@ void mw_gestaoEstoque::on_btn_gravarnovoproduto_clicked()
     aux=ui->txt_valorcompra->text();
     std::replace(aux.begin(),aux.end(),',','.');
     QString valcompra=aux;
-
+    double valCompra = aux.toDouble();
     aux=ui->txt_porcevenda->text();
     std::replace(aux.begin(),aux.end(),',','.');
     QString porcevenda=aux;
-
+    double porceVenda = aux.toDouble();
+    float valor_final = (valCompra + (valCompra * porceVenda/100));
     QSqlQuery query;
-    query.prepare("insert into tb_produtos (id_produto,produto,id_fornecedor,qtde_estoque,valor_compra,valor_venda) values"
-                      "("+QString::number(codigo.toInt())+",'"+produto+"',"+QString::number(fornecedor.toInt())+","+QString::number(quantidade.toInt())+","+QString::number(valcompra.toFloat())+","+QString::number(porcevenda.toFloat())+")");
+    query.prepare("insert into tb_produtos (id_produto,produto,id_fornecedor,qtde_estoque,valor_compra,valor_venda,porce_produto) values"
+                      "("+QString::number(codigo.toInt())+",'"+produto+"',"+QString::number(fornecedor.toInt())+","+QString::number(quantidade.toInt())+","+QString::number(valcompra.toFloat())+","+QString::number(valor_final)+","+QString::number(porcevenda.toFloat())+")");
     if(!query.exec()){
         QMessageBox::warning(this,"ERRO","Erro ao inserir produto!");
     }else{
@@ -118,7 +119,8 @@ void mw_gestaoEstoque::on_tw_ge_produtos_itemSelectionChanged()
         ui->txt_ge_fornecedor->setText(query.value(2).toString());
         ui->txt_ge_qtde->setText(query.value(3).toString());
         ui->txt_ge_valorcompra->setText(query.value(4).toString());
-        ui->txt_ge_valorvenda->setText(query.value(5).toString());
+        ui->lb_ge_valorvenda->setText("R$ "+query.value(5).toString());
+        ui->txt_ge_porcevenda->setText(query.value(6).toString());
     }
 }
 
@@ -136,13 +138,15 @@ void mw_gestaoEstoque::on_btn_ge_gravar_clicked()
         aux=ui->txt_ge_valorcompra->text();
         std::replace(aux.begin(),aux.end(),',','.');
         QString valcompra=aux;
-
-        aux=ui->txt_ge_valorvenda->text();
+        double valCompra = aux.toDouble();
+        aux=ui->txt_ge_porcevenda->text();
         std::replace(aux.begin(),aux.end(),',','.');
-        QString valvenda=aux;
+        QString porcevenda=aux;
+        double porceVenda = aux.toDouble();
+        float valor_final = (valCompra + (valCompra * porceVenda/100));
 
         QSqlQuery query;
-        query.prepare("update tb_produtos set id_produto="+QString::number(id)+",produto='"+prod+"',id_fornecedor="+QString::number(forn.toInt())+",qtde_estoque="+QString::number(qtde.toInt())+",valor_compra="+QString::number(valcompra.toDouble())+",valor_venda="+QString::number(valvenda.toDouble())+" where id_produto="+QString::number(id));
+        query.prepare("update tb_produtos set id_produto="+QString::number(id)+",produto='"+prod+"',id_fornecedor="+QString::number(forn.toInt())+",qtde_estoque="+QString::number(qtde.toInt())+",valor_compra="+QString::number(valcompra.toDouble())+",valor_venda="+QString::number(valor_final)+",porce_produto="+QString::number(porcevenda.toFloat())+" where id_produto="+QString::number(id));
         if(query.exec()){
             int linha=ui->tw_ge_produtos->currentRow();
             ui->tw_ge_produtos->item(linha,0)->setText(ui->txt_ge_codigoproduto->text());
@@ -210,4 +214,33 @@ void mw_gestaoEstoque::on_btn_ge_filtrar_clicked()
     }
     ui->txt_ge_filtrar->clear();
     ui->txt_ge_filtrar->setFocus();
+}
+
+
+void mw_gestaoEstoque::on_txt_porcevenda_textChanged(const QString &arg1)
+{
+    QString aux=ui->txt_porcevenda->text();
+    std::replace(aux.begin(),aux.end(),',','.');
+    double porcevenda=aux.toDouble();
+    qDebug() << porcevenda;
+    aux=ui->txt_valorcompra->text();
+    std::replace(aux.begin(),aux.end(),',','.');
+    double valcompra = aux.toDouble();
+    double valor_porce = (valcompra * (porcevenda/100));
+    double valor_final = valcompra + valor_porce;
+    ui->lb_valorvenda->setText("R$ "+QString::number(valor_final));
+}
+
+void mw_gestaoEstoque::on_txt_ge_porcevenda_textChanged(const QString &arg1)
+{
+    QString aux=ui->txt_ge_porcevenda->text();
+    std::replace(aux.begin(),aux.end(),',','.');
+    double porcevenda=aux.toDouble();
+    qDebug() << porcevenda;
+    aux=ui->txt_ge_valorcompra->text();
+    std::replace(aux.begin(),aux.end(),',','.');
+    double valcompra = aux.toDouble();
+    double valor_porce = (valcompra * (porcevenda/100));
+    double valor_final = valcompra + valor_porce;
+    ui->lb_ge_valorvenda->setText("R$ "+QString::number(valor_final));
 }

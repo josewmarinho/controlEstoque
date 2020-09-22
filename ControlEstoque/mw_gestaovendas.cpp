@@ -127,3 +127,8 @@ void mw_gestaoVendas::on_btn_relatorioPDF_clicked()
     QDesktopServices::openUrl(QUrl("file:///"+nome));
 }
 
+
+void mw_gestaoVendas::on_tw_listaVendas_itemSelectionChanged()
+{
+
+}

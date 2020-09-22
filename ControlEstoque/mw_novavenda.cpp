@@ -39,7 +39,7 @@ mw_novavenda::mw_novavenda(QWidget *parent) :
     ui->tw_listapesquisar->setColumnCount(3);
     ui->tw_listapesquisar->setColumnWidth(0,100);
     ui->tw_listapesquisar->setColumnWidth(1,150);
-    ui->tw_listapesquisar->setColumnWidth(2,50);
+    ui->tw_listapesquisar->setColumnWidth(2,65);
     QStringList header={"Código","Produto","Qtde"};
     ui->tw_listapesquisar->setHorizontalHeaderLabels(header);
     ui->tw_listapesquisar->setStyleSheet("QTableView{selection-background-color:red;}");
@@ -268,7 +268,7 @@ void mw_novavenda::on_btn_pesquisar_clicked()
             ui->tw_listapesquisar->insertRow(contlinhas);
             ui->tw_listapesquisar->setItem(contlinhas,0,new QTableWidgetItem(query.value(0).toString()));
             ui->tw_listapesquisar->setItem(contlinhas,1,new QTableWidgetItem(query.value(1).toString()));
-            ui->tw_listapesquisar->setItem(contlinhas,3,new QTableWidgetItem(query.value(3).toString()));
+            ui->tw_listapesquisar->setItem(contlinhas,2,new QTableWidgetItem(query.value(2).toString()));
             ui->tw_listapesquisar->setRowHeight(contlinhas,20);
             contlinhas++;
         }
@@ -283,3 +283,26 @@ void mw_novavenda::on_txt_valorrecebido_returnPressed()
     double total=calculaTotal(ui->tw_listaprodutos,4);
     ui->lb_troco->setText("R$ "+QString::number(calculaTroco()-total));
 }
+
+void mw_novavenda::on_tw_listaprodutos_cellDoubleClicked(int row, int column)
+{
+    if(ui->tw_listaprodutos->currentColumn()!=-1){
+        int linha=ui->tw_listaprodutos->currentRow();
+
+        g_idpord=ui->tw_listaprodutos->item(linha,0)->text();
+        g_prod=ui->tw_listaprodutos->item(linha,1)->text();
+        g_valuni=ui->tw_listaprodutos->item(linha,2)->text();
+        g_qtde=ui->tw_listaprodutos->item(linha,3)->text();
+
+        mw_editarprodutovenda f_editarprodutovenda;
+        f_editarprodutovenda.exec();
+
+        if(alterou){
+            ui->tw_listaprodutos->item(linha,2)->setText(g_valuni);
+            ui->tw_listaprodutos->item(linha,3)->setText(g_qtde);
+            ui->tw_listaprodutos->item(linha,4)->setText(g_valtotal);
+            ui->lb_totalvenda->setText("R$ "+QString::number(calculaTotal(ui->tw_listaprodutos,4)));
+        }
+    }
+}
+

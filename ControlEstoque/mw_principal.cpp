@@ -7,7 +7,14 @@
 #include "mw_gestaoestoque.h"
 #include "mw_gestaovendas.h"
 #include "variaveis_globais.h"
+#include "Conexao.h"
 #include <cstdlib>
+#include "mw_novavenda.h"
+#include "ui_mw_novavenda.h"
+#include <QMessageBox>
+#include <mw_editarprodutovenda.h>
+#include "mw_principal.h"
+#include "variaveis_globais.h"
 
 
 int variaveis_globais::id_colab;
@@ -20,6 +27,7 @@ mw_principal::mw_principal(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::mw_principal)
 {
+
     ui->setupUi(this);
 
     variaveis_globais::logado=false;
@@ -63,6 +71,17 @@ void mw_principal::on_btn_bloquear_clicked()
 void mw_principal::on_pushButton_2_clicked()
 {
     if(variaveis_globais::logado){
+
+        Conexao con;
+        if(!con.abrir()){
+            QMessageBox::warning(this,"ERRO","Erro ao abrir banco de dados");
+        }else{
+            QSqlQuery query("select * from tb_produtos where qtde_estoque < 10");
+            if(query.next()){
+                QMessageBox::information(this,"AVISO","Existe(m) produto(s) com a quantidade menor que 10!");
+            }
+            con.fechar();
+        }
         mw_novavenda f_novavenda;
         f_novavenda.exec();
    }else{

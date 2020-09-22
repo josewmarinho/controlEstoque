@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_novoproduto">
     <attribute name="title">
@@ -159,6 +159,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QPushButton" name="btn_novoproduto">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="text">
            <string>Novo</string>
           </property>
@@ -166,6 +169,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="btn_gravarnovoproduto">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="text">
            <string>Salvar</string>
           </property>
@@ -207,8 +213,8 @@
        <rect>
         <x>20</x>
         <y>30</y>
-        <width>112</width>
-        <height>42</height>
+        <width>114</width>
+        <height>46</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -339,12 +345,12 @@
         <item>
          <widget class="QLabel" name="label_11">
           <property name="text">
-           <string>Valor Venda</string>
+           <string>Porcentagem Venda</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="txt_ge_valorvenda"/>
+         <widget class="QLineEdit" name="txt_ge_porcevenda"/>
         </item>
        </layout>
       </item>
@@ -361,6 +367,21 @@
          <widget class="QLineEdit" name="txt_ge_fornecedor"/>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_ge_valorvenda">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:#FA023C;</string>
+        </property>
+        <property name="text">
+         <string>R$</string>
+        </property>
+       </widget>
       </item>
       <item>
        <spacer name="verticalSpacer_2">
