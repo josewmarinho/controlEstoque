@@ -34,7 +34,7 @@ void mw_gestaoEstoque::on_btn_novoproduto_clicked()
     ui->txt_codigoproduto->clear();
     ui->txt_descricaoproduto->clear();
     ui->txt_qtdeestoque->clear();
-    ui->txt_valorvenda->clear();
+    ui->txt_porcevenda->clear();
     ui->txt_valorcompra->clear();
     ui->txt_fornecedor->clear();
     ui->txt_codigoproduto->setFocus();
@@ -52,13 +52,13 @@ void mw_gestaoEstoque::on_btn_gravarnovoproduto_clicked()
     std::replace(aux.begin(),aux.end(),',','.');
     QString valcompra=aux;
 
-    aux=ui->txt_valorvenda->text();
+    aux=ui->txt_porcevenda->text();
     std::replace(aux.begin(),aux.end(),',','.');
-    QString valvenda=aux;
+    QString porcevenda=aux;
 
     QSqlQuery query;
     query.prepare("insert into tb_produtos (id_produto,produto,id_fornecedor,qtde_estoque,valor_compra,valor_venda) values"
-                      "("+QString::number(codigo.toInt())+",'"+produto+"',"+QString::number(fornecedor.toInt())+","+QString::number(quantidade.toInt())+","+QString::number(valcompra.toFloat())+","+QString::number(valvenda.toFloat())+")");
+                      "("+QString::number(codigo.toInt())+",'"+produto+"',"+QString::number(fornecedor.toInt())+","+QString::number(quantidade.toInt())+","+QString::number(valcompra.toFloat())+","+QString::number(porcevenda.toFloat())+")");
     if(!query.exec()){
         QMessageBox::warning(this,"ERRO","Erro ao inserir produto!");
     }else{
@@ -66,7 +66,7 @@ void mw_gestaoEstoque::on_btn_gravarnovoproduto_clicked()
         ui->txt_codigoproduto->clear();
         ui->txt_descricaoproduto->clear();
         ui->txt_qtdeestoque->clear();
-        ui->txt_valorvenda->clear();
+        ui->txt_porcevenda->clear();
         ui->txt_valorcompra->clear();
         ui->txt_fornecedor->clear();
         ui->txt_codigoproduto->setFocus();

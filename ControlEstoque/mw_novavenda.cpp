@@ -111,10 +111,8 @@ double mw_novavenda::calculaTotal(QTableWidget *tw, int coluna){
 }
 
 double mw_novavenda::calculaTroco(){
-    double trocototal = 0.0;
-
-
-    return trocototal;
+    QString trocototal = ui->txt_valorrecebido->text();
+    return trocototal.toDouble();
 }
 
 
@@ -158,44 +156,56 @@ void mw_novavenda::on_btn_editarproduto_clicked()
 void mw_novavenda::on_btn_finalizarvenda_clicked()
 {
     if(ui->tw_listaprodutos->rowCount()>0){
-        int idVenda;
-        QString msgFimVenda;
-        double total=calculaTotal(ui->tw_listaprodutos,4);
-        //QString data=QDate::currentDate().toString("yyy-MM-dd");
-        QString data=QDate::currentDate().toString("dd/MM/yyyy");
-        QString hora=QTime::currentTime().toString("hh:mm:ss");
-        QSqlQuery query;
-        query.prepare("insert into tb_vendas (data_venda,hora_venda,id_colaborador,valor_total,id_tipo_pagamento) values ('"+data+"','"+hora+"',"+QString::number(variaveis_globais::id_colab)+","+QString::number(total)+",1)");
-        if(!query.exec()){
-            QMessageBox::warning(this,"ERRO","Erro registrar nova venda.");
-        }else{
-            query.prepare("select id_venda from tb_vendas order by id_venda desc limit 1");
-            query.exec();
-            query.first();
-            idVenda=query.value(0).toInt();
-            msgFimVenda="ID Venda: "+QString::number(idVenda)+"\nValor total: R$"+QString::number(total);
-
-            int totalLinhas=ui->tw_listaprodutos->rowCount();
-            int linha=0;
-            while(linha<totalLinhas){
-                QString prod=ui->tw_listaprodutos->item(linha,1)->text();
-                QString qtde=ui->tw_listaprodutos->item(linha,3)->text();
-                QString valUn=ui->tw_listaprodutos->item(linha,2)->text();
-                QString valTot=ui->tw_listaprodutos->item(linha,4)->text();
-                query.prepare("insert into tb_produtosVendas(id_venda,produto,qtde,valor_un,valor_total) values("+QString::number(idVenda)+",'"+prod+"',"+qtde+","+valUn+","+valTot+")");
+            int idVenda;
+            int qtdeEstoque;
+            int qtdeNovo;
+            QString msgFimVenda;
+            double total=calculaTotal(ui->tw_listaprodutos,4);
+            //QString data=QDate::currentDate().toString("yyy-MM-dd");
+            QString data=QDate::currentDate().toString("dd/MM/yyyy");
+            QString hora=QTime::currentTime().toString("hh:mm:ss");
+            QSqlQuery query;
+            query.prepare("insert into tb_vendas (data_venda,hora_venda,id_colaborador,valor_total,id_tipo_pagamento) values ('"+data+"','"+hora+"',"+QString::number(variaveis_globais::id_colab)+","+QString::number(total)+",1)");
+            if(!query.exec()){
+                QMessageBox::warning(this,"ERRO","Erro registrar nova venda.");
+            }else{
+                query.prepare("select id_venda from tb_vendas order by id_venda desc limit 1");
                 query.exec();
-                linha++;
+                query.first();
+                idVenda=query.value(0).toInt();
+                msgFimVenda="ID Venda: "+QString::number(idVenda)+"\nValor total: R$"+QString::number(total);
+
+                int totalLinhas=ui->tw_listaprodutos->rowCount();
+                int linha=0;
+                while(linha<totalLinhas){
+                    QString id = ui->tw_listaprodutos->item(linha,0)->text();
+                    QString prod=ui->tw_listaprodutos->item(linha,1)->text();
+                    QString qtde=ui->tw_listaprodutos->item(linha,3)->text();
+                    QString valUn=ui->tw_listaprodutos->item(linha,2)->text();
+                    QString valTot=ui->tw_listaprodutos->item(linha,4)->text();
+                    query.prepare("select qtde_estoque from tb_produtos where id_produto="+id);
+                    query.exec();
+                    query.first();
+    //                qDebug() << query.lastError().text();
+                    qtdeEstoque = query.value(0).toInt();
+    //                qDebug() << qtdeEstoque;
+                    qtdeNovo = qtdeEstoque - qtde.toInt();
+                    query.prepare("update tb_produtos set qtde_estoque="+QString::number(qtdeNovo)+" where id_produto="+id);
+                    query.exec();
+                    query.prepare("insert into tb_produtosVendas(id_venda,produto,qtde,valor_un,valor_total, id_produto) values("+QString::number(idVenda)+",'"+prod+"',"+qtde+","+valUn+","+valTot+","+id+")");
+                    query.exec();
+                    linha++;
+                }
+
+                QMessageBox::information(this,"Venda Concluída",msgFimVenda);
+                resetaCampos();
+                removerLinhas(ui->tw_listaprodutos);
+                ui->lb_totalvenda->setText("R$ 0.00");
             }
 
-            QMessageBox::information(this,"Venda Concluída",msgFimVenda);
-            resetaCampos();
-            removerLinhas(ui->tw_listaprodutos);
-            ui->lb_totalvenda->setText("R$ 0.00");
+        }else{
+            QMessageBox::warning(this,"ERRO","Não existem produtos nessa venda!\nPrimeiro adicione um produto.");
         }
-
-    }else{
-        QMessageBox::warning(this,"ERRO","Não existem produtos nessa venda!\nPrimeiro adicione um produto.");
-    }
 }
 
 void mw_novavenda::on_pushButton_4_clicked()
@@ -269,5 +279,5 @@ void mw_novavenda::on_btn_pesquisar_clicked()
 void mw_novavenda::on_txt_valorrecebido_returnPressed()
 {
     double total=calculaTotal(ui->tw_listaprodutos,4);
-    ui->lb_troco->setText("R$ "+QString::number(total));
+    ui->lb_troco->setText("R$ "+QString::number(calculaTroco()-total));
 }

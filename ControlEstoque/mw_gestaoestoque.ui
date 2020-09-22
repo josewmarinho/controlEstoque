@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_novoproduto">
     <attribute name="title">
@@ -102,12 +102,12 @@
           <item>
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Valor de Venda</string>
+             <string>Porcentagem Venda</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="txt_valorvenda"/>
+           <widget class="QLineEdit" name="txt_porcevenda"/>
           </item>
          </layout>
         </item>
@@ -126,6 +126,21 @@
          </layout>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_valorvenda">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:#FA023C;</string>
+        </property>
+        <property name="text">
+         <string>R$</string>
+        </property>
+       </widget>
       </item>
       <item>
        <spacer name="verticalSpacer">
@@ -152,7 +167,7 @@
         <item>
          <widget class="QPushButton" name="btn_gravarnovoproduto">
           <property name="text">
-           <string>Gravar</string>
+           <string>Salvar</string>
           </property>
          </widget>
         </item>
@@ -365,7 +380,7 @@
         <item>
          <widget class="QPushButton" name="btn_ge_gravar">
           <property name="text">
-           <string>Gravar</string>
+           <string>Salvar</string>
           </property>
          </widget>
         </item>

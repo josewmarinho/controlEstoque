@@ -49,10 +49,11 @@ public:
     QLineEdit *txt_valorcompra;
     QVBoxLayout *valorVenda;
     QLabel *label_3;
-    QLineEdit *txt_valorvenda;
+    QLineEdit *txt_porcevenda;
     QVBoxLayout *Fornecedor;
     QLabel *label_4;
     QLineEdit *txt_fornecedor;
+    QLabel *lb_valorvenda;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
     QPushButton *btn_novoproduto;
@@ -177,10 +178,10 @@ public:
 
         valorVenda->addWidget(label_3);
 
-        txt_valorvenda = new QLineEdit(layoutWidget);
-        txt_valorvenda->setObjectName(QString::fromUtf8("txt_valorvenda"));
+        txt_porcevenda = new QLineEdit(layoutWidget);
+        txt_porcevenda->setObjectName(QString::fromUtf8("txt_porcevenda"));
 
-        valorVenda->addWidget(txt_valorvenda);
+        valorVenda->addWidget(txt_porcevenda);
 
 
         horizontalLayout_2->addLayout(valorVenda);
@@ -202,6 +203,15 @@ public:
 
 
         verticalLayout_3->addLayout(horizontalLayout_2);
+
+        lb_valorvenda = new QLabel(layoutWidget);
+        lb_valorvenda->setObjectName(QString::fromUtf8("lb_valorvenda"));
+        QFont font;
+        font.setPointSize(12);
+        lb_valorvenda->setFont(font);
+        lb_valorvenda->setStyleSheet(QString::fromUtf8("color:#FA023C;"));
+
+        verticalLayout_3->addWidget(lb_valorvenda);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -376,7 +386,7 @@ public:
 
         retranslateUi(mw_gestaoEstoque);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(mw_gestaoEstoque);
@@ -389,10 +399,11 @@ public:
         label_2->setText(QCoreApplication::translate("mw_gestaoEstoque", "Descri\303\247\303\243o Produto", nullptr));
         label_5->setText(QCoreApplication::translate("mw_gestaoEstoque", "Qtde Estoque", nullptr));
         label_6->setText(QCoreApplication::translate("mw_gestaoEstoque", "Valor de Compra", nullptr));
-        label_3->setText(QCoreApplication::translate("mw_gestaoEstoque", "Valor de Venda", nullptr));
+        label_3->setText(QCoreApplication::translate("mw_gestaoEstoque", "Porcentagem Venda", nullptr));
         label_4->setText(QCoreApplication::translate("mw_gestaoEstoque", "Fornecedor", nullptr));
+        lb_valorvenda->setText(QCoreApplication::translate("mw_gestaoEstoque", "R$", nullptr));
         btn_novoproduto->setText(QCoreApplication::translate("mw_gestaoEstoque", "Novo", nullptr));
-        btn_gravarnovoproduto->setText(QCoreApplication::translate("mw_gestaoEstoque", "Gravar", nullptr));
+        btn_gravarnovoproduto->setText(QCoreApplication::translate("mw_gestaoEstoque", "Salvar", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_novoproduto), QCoreApplication::translate("mw_gestaoEstoque", "Novo Produto", nullptr));
         groupBox->setTitle(QCoreApplication::translate("mw_gestaoEstoque", "Filtrar por:", nullptr));
         rb_ge_codigo->setText(QCoreApplication::translate("mw_gestaoEstoque", "C\303\263digo Produto", nullptr));
@@ -405,7 +416,7 @@ public:
         label_10->setText(QCoreApplication::translate("mw_gestaoEstoque", "Valor Compra", nullptr));
         label_11->setText(QCoreApplication::translate("mw_gestaoEstoque", "Valor Venda", nullptr));
         label_12->setText(QCoreApplication::translate("mw_gestaoEstoque", "Fornecedor", nullptr));
-        btn_ge_gravar->setText(QCoreApplication::translate("mw_gestaoEstoque", "Gravar", nullptr));
+        btn_ge_gravar->setText(QCoreApplication::translate("mw_gestaoEstoque", "Salvar", nullptr));
         btn_ge_excluir->setText(QCoreApplication::translate("mw_gestaoEstoque", "Excluir", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_gestaoprodutos), QCoreApplication::translate("mw_gestaoEstoque", "Gest\303\243o Produtos", nullptr));
     } // retranslateUi

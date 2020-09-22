@@ -80,7 +80,7 @@ public:
         label_4->setStyleSheet(QString::fromUtf8(""));
         lb_totalvenda = new QLabel(mw_novavenda);
         lb_totalvenda->setObjectName(QString::fromUtf8("lb_totalvenda"));
-        lb_totalvenda->setGeometry(QRect(120, 320, 61, 16));
+        lb_totalvenda->setGeometry(QRect(120, 320, 101, 16));
         lb_totalvenda->setFont(font);
         lb_totalvenda->setStyleSheet(QString::fromUtf8("color:#FA023C;"));
         btn_excluirproduto = new QPushButton(mw_novavenda);
